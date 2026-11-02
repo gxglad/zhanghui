@@ -3,72 +3,278 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>31张慧-后台</title>
+<title>31张慧-后台管理</title>
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="site-header" id="siteHeader">
-  <div class="container nav-wrap">
-    <a class="brand" href="index.html">
-      <span class="brand-mark">慧</span>
-      <span class="brand-text">
-        <b>张慧</b>
-        <i>CODE &amp; MOONLIGHT</i>
-      </span>
-    </a>
-    <nav class="nav" id="siteNav">
-      <a href="index.html" class="">首页</a>
-      <a href="news.html" class="">日志</a>
-      <a href="about.html" class="">关于</a>
-      <a href="message.html" class="">留言板</a>
-      <a href="admin.html" class="nav-admin">后台</a>
-    </nav>
-    <button class="nav-toggle" id="navToggle" type="button" aria-label="展开菜单">
-      <span></span><span></span>
-    </button>
-  </div>
-</header>
-<main>
-  <section class="page-head">
-    <div class="container">
-      <h1 class="page-title">后台</h1>
-      <p class="page-sub">后台需要 PHP 才能登录，这份本地预览里只有前台。</p>
-    </div>
-  </section>
-  <section class="section" style="padding-top: 10px;">
-    <div class="container">
-      <p style="color:var(--ink-2);line-height:2;max-width:640px;">
-        线上的后台地址是 <b>admin/login.php</b>，账号 <b>admin</b>，密码 <b>admin888</b>。
-        里面能：发日志、改日志、删日志、置顶，回复留言、隐藏留言、删留言。
-        截图见作品包里的 <b>03_截图/04_后台登录.png</b>。
-      </p>
-      <a class="btn btn-ghost" href="index.html">← 回到首页</a>
-    </div>
-  </section>
-</main>
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <div class="footer-name">张慧 · 代码与月光</div>
-        <p class="footer-desc">计算机223 31 号 · 动态网站设计实训作品</p>
-        <p class="footer-desc">记录上课、食堂和学校里的小事。</p>
-      </div>
-      <div class="footer-links">
-        <a href="index.html">首页</a>
-        <a href="news.html">日志</a>
-        <a href="about.html">关于</a>
-        <a href="message.html">留言板</a>
-        <a href="admin.html">后台管理</a>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <span>© 2026 张慧 个人网站</span>
-      <span class="credit">技术支持：计算机223-31-张慧</span>
-    </div>
-  </footer>
+<div id="app"></div>
 
-  <script src="js/main.js"></script>
+<script>
+const SEED = {"news":[{"id":1,"title":"网站总算跑起来了","category":"代码","summary":"白屏了一下午，最后发现是数据库名少写了一个字母。","content":"下午四点二十，首页终于在浏览器里显示出来了。前面两个小时一直是白屏，我以为是页面写错了，把 index.php 从头到尾看了一遍，没看出问题。后来想起来要看错误提示，翻到 environ.php 才发现库名少写了一个字母。\n\n改完刷新，页面出来了。我在宿舍小声喊了一句，室友问我在干嘛。\n\n这个网站做了一个多星期。前台是首页、日志、关于、留言板，后台能发文章、能删留言、能回复。数据库三张表，admin 存账号，news 存文章，message 存留言，表名按老师的要求改成了 zhanghui_ 开头。一开始漏改了一个文件里的 SQL，点了半天没反应，又找了很久。\n\n写的过程里最麻烦的不是 HTML，是让表单和数据库对上。字段名多打一个字母就报错，报错只有一行英文，看不懂。我记了两页纸，现在回头看，大多数错误都犯得很低级。\n\n后台在 admin/login.php，账号 admin，密码先设的 admin888。老师说要改成自己的密码，我记在便签上了，等交完作业再改。\n\n还没弄好的：手机上表格会挤，图片一直没加。\n\n2026-11-02 记。","is_top":1,"views":0,"created_at":"2026-11-02 16:38:00"},{"id":2,"title":"中午的食堂","category":"生活","summary":"十一点四十下课，十一点四十三到食堂，队伍已经排到门口。","content":"食堂一楼最里面那家做番茄炒蛋，三块五，加米饭五块五。鸡蛋给得实在，番茄不太酸，是我这学期吃得最多的一道菜。\n\n今天十一点四十下课，从教学楼走过去三分钟。到的时候队伍已经拐了个弯，排了大概七分钟。轮到我时番茄炒蛋只剩盆底一点，阿姨用勺子刮了两下，全扣在我盘子里，还问要不要再加点汤汁。\n\n桌子是四人长桌，中午基本要拼桌。今天对面坐了两个男生，一个说自己电脑蓝屏了，另一个在教他怎么进安全模式。我一边吃一边听，感觉比上机课讲得清楚。\n\n吃完出来，太阳正好。台阶上趴着一只橘猫，晒得很舒展，我叫它，它不理。","is_top":0,"views":0,"created_at":"2026-10-31 12:20:00"},{"id":3,"title":"学校的小猫","category":"生活","summary":"食堂后门那只三花，今天总算让我摸到了。","content":"食堂后门靠垃圾桶那边有个纸箱，垫着旧衣服，是它的窝。不知道是谁搭的。\n\n这只三花平时见人就跑，只有中午人少的时候才肯待在门口。今天我刚坐下，它自己走过来，在我脚边转了两圈，尾巴翘得挺高。\n\n我把盘子里的鸡腿撕了一小块放地上，它闻了闻，没吃。我以为嫌小，又撕了一块，还是不吃。旁边刷碗的阿姨说，它一天两顿有人喂，猫粮管够，看不上鸡腿。\n\n难怪。它不吃，但也没走，就在我脚边趴着，让我摸了两下背。毛有点硬。\n\n宿舍不让养，只能中午过来看看。它好像也不在意我来不来。","is_top":0,"views":0,"created_at":"2026-10-29 13:05:00"},{"id":4,"title":"传文件传到 404","category":"代码","summary":"FTP 传错了目录，首页 404 了半个多小时。","content":"老师说网站要传到网页空间上，别人才能打开。我装了 FileZilla，填好主机、账号、密码，连上去看到一堆文件夹。\n\n第一次传的时候网断了，重新连上以后，我把整个项目直接拖到了刚登录进来的那个目录，不是 wwwroot。传完打开网址，404。\n\n我以为是空间还没生效，等了二十分钟，又刷新了十几次，还是 404。后来问了同学，他说网站必须放在 wwwroot 里面，放别的地方访问不到。\n\n删掉重传，这次一口气传完。再打开网址，页面跟本地一模一样，连留言板里我测试时写的那条「111」都在。\n\n有点不真实。原来我电脑上的东西，别人也能看到了。","is_top":0,"views":0,"created_at":"2026-10-26 19:47:00"}],"msgs":[{"id":1,"name":"王老师","content":"首页的标题改成「31张慧-首页」了，其他页面也要一起改。数据库导出的 sql 记得放根目录。","reply":"改好了老师，正在重新传。","is_visible":1,"created_at":"2026-11-02 09:12:00"},{"id":2,"name":"陈雨","content":"手机上打开导航会变成两条杠，能用。就是留言的输入框在小屏上有点靠下，要滑一下。","reply":"","is_visible":1,"created_at":"2026-11-01 20:41:00"},{"id":3,"name":"匿名","content":"路过，收藏了。","reply":"","is_visible":1,"created_at":"2026-10-30 22:05:00"}]};
+const KEY = 'zhanghui_demo_v1';
+const $ = s => document.querySelector(s);
+const esc = s => String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const pad = n => String(n).padStart(2, '0');
+const now = () => { const d = new Date(); return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+' '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds()); };
+const fmt = (s, p) => { const d = new Date(String(s).replace(' ', 'T')); if (isNaN(d)) return s;
+  return p.replace('Y', d.getFullYear()).replace('m', pad(d.getMonth()+1)).replace('d', pad(d.getDate())).replace('H', pad(d.getHours())).replace('i', pad(d.getMinutes())); };
+const cut = (s, n) => { s = String(s||'').replace(/\s+/g,' ').trim(); return s.length > n ? s.slice(0, n) + '…' : s; };
+
+function load(){ try { const raw = localStorage.getItem(KEY); if (raw) return JSON.parse(raw); } catch(e){} return JSON.parse(JSON.stringify(SEED)); }
+function save(db){ try { localStorage.setItem(KEY, JSON.stringify(db)); } catch(e){} }
+let db = load();
+function reset(){ localStorage.removeItem(KEY); db = load(); }
+function nextId(list){ return list.reduce((a, b) => Math.max(a, b.id), 0) + 1; }
+
+/* ---------- 登录 ---------- */
+const logged = () => sessionStorage.getItem('zhanghui_admin') === '1';
+
+function renderLogin(err){
+  $('#app').innerHTML = `
+  <div class="login-page">
+    <div class="login-card">
+      <div class="brand-mark">慧</div>
+      <h1>后台管理</h1>
+      <p class="login-sub">张慧 · ADMIN</p>
+      <form id="loginForm">
+        <div class="field"><label for="u">管理员账号</label><input id="u" type="text" value="admin" autocomplete="username"></div>
+        <div class="field"><label for="p">登录密码</label><input id="p" type="password" placeholder="admin888" autocomplete="current-password"></div>
+        ${err ? '<div class="alert alert-err">' + esc(err) + '</div>' : ''}
+        <button class="btn btn-primary" type="submit">登 录</button>
+      </form>
+      <p class="form-tip" style="margin-top:14px;text-align:center;">演示账号 admin / admin888</p>
+      <a class="login-back" href="index.html">← 返回网站首页</a>
+    </div>
+  </div>`;
+  $('#loginForm').addEventListener('submit', ev => {
+    ev.preventDefault();
+    const u = $('#u').value.trim(), p = $('#p').value;
+    if (u === 'admin' && p === 'admin888') { sessionStorage.setItem('zhanghui_admin', '1'); renderShell(); }
+    else { renderLogin('账号或密码不对，再试一次。'); }
+  });
+}
+
+/* ---------- 后台框架 ---------- */
+const NAV = [['overview','后台首页'],['news','新闻管理'],['add','新闻添加'],['msg','留言管理']];
+
+function renderShell(view){
+  view = view || location.hash.replace('#','') || 'overview';
+  if (!NAV.some(n => n[0] === view)) view = 'overview';
+  const label = (NAV.find(n => n[0] === view) || [,'后台首页'])[1];
+  $('#app').innerHTML = `
+  <div class="admin-shell">
+    <aside class="admin-side">
+      <div class="admin-brand">
+        <span class="brand-mark">慧</span>
+        <div><b>代码与月光</b><span>ADMIN PANEL</span></div>
+      </div>
+      <nav class="admin-nav" id="adminNav">
+        ${NAV.map(([k, t]) => '<a href="#' + k + '" class="' + (k === view ? 'active' : '') + '">' + t + '</a>').join('')}
+        <a href="index.html">查看前台</a>
+        <a href="#" id="logout">退出登录</a>
+      </nav>
+    </aside>
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <span class="admin-title" id="adminTitle">${label}</span>
+        <div class="admin-user"><span>张慧 · admin</span><a href="#" id="logout2">退出登录</a></div>
+      </header>
+      <div class="admin-content" id="adminContent"></div>
+    </div>
+  </div>`;
+  ['#logout','#logout2'].forEach(sel => { const el = $(sel); if (el) el.addEventListener('click', ev => { ev.preventDefault(); sessionStorage.removeItem('zhanghui_admin'); renderLogin(); }); });
+  document.querySelectorAll('#adminNav a[href^="#"]').forEach(a => a.addEventListener('click', ev => { ev.preventDefault(); location.hash = a.getAttribute('href'); }));
+  renderView(view);
+}
+
+function renderView(view){
+  const c = $('#adminContent');
+  if (view === 'overview') c.innerHTML = viewOverview();
+  if (view === 'news') c.innerHTML = viewNews();
+  if (view === 'add') c.innerHTML = viewForm(null);
+  if (view === 'msg') c.innerHTML = viewMsg();
+  bindView(view);
+}
+
+/* ---------- 概览 ---------- */
+function viewOverview(){
+  const views = db.news.reduce((a, b) => a + b.views, 0);
+  const latest = db.news.slice().sort((a,b)=> (b.is_top-a.is_top) || (b.created_at>a.created_at?1:-1)).slice(0, 4);
+  const lastMsg = db.msgs.slice().sort((a,b)=> b.created_at>a.created_at?1:-1).slice(0,3);
+  return `
+  <div class="stat-cards">
+    <div class="stat-card"><b>${db.news.length}</b><span>篇日志</span></div>
+    <div class="stat-card"><b>${db.msgs.length}</b><span>条留言</span></div>
+    <div class="stat-card"><b>${views}</b><span>次阅读</span></div>
+    <div class="stat-card"><b>${db.msgs.filter(m=>!m.is_visible).length}</b><span>条待处理</span></div>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><h2>最新日志</h2><a class="link-more" href="#news">全部日志 →</a></div>
+    <table class="table">
+      <thead><tr><th>标题</th><th>分类</th><th>发布时间</th><th>阅读</th></tr></thead>
+      <tbody>
+      ${latest.map(n=>`<tr><td class="title-cell">${esc(n.title)}${n.is_top?' <span class="tag" style="font-size:10px;padding:2px 8px;">置顶</span>':''}</td><td>${esc(n.category)}</td><td>${fmt(n.created_at,'Y.m.d')}</td><td>${n.views}</td></tr>`).join('')}
+      </tbody>
+    </table>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><h2>最新留言</h2><a class="link-more" href="#msg">去回复 →</a></div>
+    <table class="table">
+      <thead><tr><th>昵称</th><th>内容</th><th>时间</th><th>站长回复</th></tr></thead>
+      <tbody>
+      ${lastMsg.map(m=>`<tr><td>${esc(m.name)}</td><td>${esc(cut(m.content,42))}</td><td>${fmt(m.created_at,'Y.m.d H:i')}</td><td>${m.reply?esc(cut(m.reply,20)):'<span style="color:var(--muted);">未回复</span>'}</td></tr>`).join('')}
+      </tbody>
+    </table>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><h2>网站信息</h2><button class="btn btn-ghost" id="resetDemo" type="button">恢复初始数据</button></div>
+    <table class="table">
+      <tbody>
+        <tr><td style="width:140px;color:var(--muted);">网站名称</td><td>代码与月光</td></tr>
+        <tr><td style="color:var(--muted);">作者</td><td>计算机223 · 31号 · 张慧</td></tr>
+        <tr><td style="color:var(--muted);">数据表</td><td>zhanghui_admin / zhanghui_news / zhanghui_message</td></tr>
+        <tr><td style="color:var(--muted);">线上版本</td><td>PHP 8 + MySQL 5.7（mysqli 预处理），说明见压缩包「部署与提交指南.md」</td></tr>
+        <tr><td style="color:var(--muted);">当前页面</td><td>GitHub Pages 静态演示：数据保存在这台设备的浏览器里（localStorage），换个浏览器数据不通用。</td></tr>
+      </tbody>
+    </table>
+  </div>`;
+}
+
+/* ---------- 新闻管理 ---------- */
+function viewNews(){
+  const list = db.news.slice().sort((a,b)=> (b.is_top-a.is_top) || (b.created_at>a.created_at?1:-1));
+  return `
+  <div class="panel">
+    <div class="panel-head"><h2>日志列表（共 ${list.length} 篇）</h2><a class="btn btn-primary" href="#add">写一篇</a></div>
+    <table class="table">
+      <thead><tr><th>标题</th><th>分类</th><th>发布时间</th><th>阅读</th><th>操作</th></tr></thead>
+      <tbody>
+      ${list.map(n=>`<tr>
+        <td class="title-cell">${esc(n.title)}${n.is_top?' <span class="tag" style="font-size:10px;padding:2px 8px;">置顶</span>':''}</td>
+        <td>${esc(n.category)}</td>
+        <td>${fmt(n.created_at,'Y.m.d')}</td>
+        <td>${n.views}</td>
+        <td><div class="ops">
+          <button class="btn btn-ghost" style="padding:4px 12px;font-size:12px;" data-edit="${n.id}">编辑</button>
+          <button class="btn btn-ghost" style="padding:4px 12px;font-size:12px;" data-top="${n.id}">${n.is_top?'取消置顶':'置顶'}</button>
+          <button class="btn btn-ghost" style="padding:4px 12px;font-size:12px;color:#a34;" data-del="${n.id}">删除</button>
+        </div></td></tr>`).join('')}
+      </tbody>
+    </table>
+  </div>`;
+}
+
+/* ---------- 新闻添加 / 编辑 ---------- */
+function viewForm(n){
+  const cats = ['随笔','代码','生活','影像','读书'];
+  return `
+  <div class="panel">
+    <div class="panel-head"><h2>${n ? '编辑日志' : '写一篇日志'}</h2><a class="link-more" href="#news">← 返回列表</a></div>
+    <form id="newsForm" style="max-width:640px;">
+      <div class="field"><label>标题</label><input id="f_title" type="text" maxlength="120" value="${n?esc(n.title):''}" placeholder="今天想写点什么"></div>
+      <div class="field"><label>分类</label>
+        <select id="f_cat" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;">
+          ${cats.map(c=>'<option '+(n&&n.category===c?'selected':'')+'>'+c+'</option>').join('')}
+        </select>
+      </div>
+      <div class="field"><label>摘要</label><input id="f_sum" type="text" maxlength="200" value="${n?esc(n.summary):''}" placeholder="一句话概括，列表里显示这句"></div>
+      <div class="field"><label>正文</label><textarea id="f_body" style="min-height:220px;">${n?esc(n.content):''}</textarea></div>
+      <div class="field"><label><input id="f_top" type="checkbox" ${n&&n.is_top?'checked':''}> 置顶这篇</label></div>
+      <div class="form-actions"><button class="btn btn-primary" type="submit">${n?'保存修改':'发布'}</button></div>
+    </form>
+  </div>`;
+}
+
+/* ---------- 留言管理 ---------- */
+function viewMsg(){
+  const list = db.msgs.slice().sort((a,b)=> b.created_at>a.created_at?1:-1);
+  return `
+  <div class="panel">
+    <div class="panel-head"><h2>留言列表（共 ${list.length} 条）</h2></div>
+    <table class="table">
+      <thead><tr><th>昵称</th><th>内容</th><th>时间</th><th>状态</th><th>操作</th></tr></thead>
+      <tbody>
+      ${list.map(m=>`<tr>
+        <td>${esc(m.name)}</td>
+        <td style="max-width:320px;">${esc(cut(m.content,50))}${m.reply?'<div style="font-size:12px;color:var(--green);margin-top:6px;">回复：'+esc(cut(m.reply,40))+'</div>':''}</td>
+        <td>${fmt(m.created_at,'Y.m.d H:i')}</td>
+        <td>${m.is_visible?'显示':'<span style="color:var(--muted);">隐藏</span>'}</td>
+        <td><div class="ops">
+          <button class="btn btn-ghost" style="padding:4px 12px;font-size:12px;" data-reply="${m.id}">回复</button>
+          <button class="btn btn-ghost" style="padding:4px 12px;font-size:12px;" data-hide="${m.id}">${m.is_visible?'隐藏':'恢复'}</button>
+          <button class="btn btn-ghost" style="padding:4px 12px;font-size:12px;color:#a34;" data-delmsg="${m.id}">删除</button>
+        </div></td></tr>`).join('')}
+      </tbody>
+    </table>
+  </div>`;
+}
+
+/* ---------- 事件绑定 ---------- */
+function bindView(view){
+  const r = $('#resetDemo');
+  if (r) r.addEventListener('click', () => { if (confirm('恢复成初始的 4 篇日志和 3 条留言？')) { reset(); renderView('overview'); } });
+
+  document.querySelectorAll('[data-del]').forEach(b => b.addEventListener('click', () => {
+    const id = +b.dataset.del;
+    if (!confirm('确定删除这篇日志吗？')) return;
+    db.news = db.news.filter(n => n.id !== id); save(db); renderView('news');
+  }));
+  document.querySelectorAll('[data-top]').forEach(b => b.addEventListener('click', () => {
+    const n = db.news.find(x => x.id === +b.dataset.top); if (!n) return;
+    n.is_top = n.is_top ? 0 : 1; save(db); renderView('news');
+  }));
+  document.querySelectorAll('[data-edit]').forEach(b => b.addEventListener('click', () => {
+    const id = +b.dataset.edit;
+    $('#adminContent').innerHTML = viewForm(db.news.find(n => n.id === id));
+    bindView('add'); bindForm(id);
+  }));
+
+  document.querySelectorAll('[data-delmsg]').forEach(b => b.addEventListener('click', () => {
+    if (!confirm('确定删除这条留言吗？')) return;
+    const id = +b.dataset.delmsg;
+    db.msgs = db.msgs.filter(m => m.id !== id); save(db); renderView('msg');
+  }));
+  document.querySelectorAll('[data-hide]').forEach(b => b.addEventListener('click', () => {
+    const m = db.msgs.find(x => x.id === +b.dataset.hide); if (!m) return;
+    m.is_visible = m.is_visible ? 0 : 1; save(db); renderView('msg');
+  }));
+  document.querySelectorAll('[data-reply]').forEach(b => b.addEventListener('click', () => {
+    const m = db.msgs.find(x => x.id === +b.dataset.reply); if (!m) return;
+    const v = prompt('回复「' + m.name + '」：', m.reply || '');
+    if (v === null) return;
+    m.reply = v.trim(); save(db); renderView('msg');
+  }));
+
+  if (view === 'add') bindForm(null);
+}
+
+function bindForm(editId){
+  const f = $('#newsForm');
+  if (!f) return;
+  f.addEventListener('submit', ev => {
+    ev.preventDefault();
+    const title = $('#f_title').value.trim();
+    const body = $('#f_body').value.trim();
+    if (!title) { alert('标题不能空着'); return; }
+    if (!body) { alert('正文不能空着'); return; }
+    const data = { title, category: $('#f_cat').value, summary: $('#f_sum').value.trim(), content: body, is_top: $('#f_top').checked ? 1 : 0 };
+    if (editId) {
+      const n = db.news.find(x => x.id === editId);
+      Object.assign(n, data, { updated_at: now() });
+    } else {
+      db.news.push(Object.assign({ id: nextId(db.news), views: 0, created_at: now(), updated_at: now() }, data));
+    }
+    save(db);
+    location.hash = 'news';
+    renderShell('news');
+  });
+}
+
+/* ---------- 启动 ---------- */
+window.addEventListener('hashchange', () => { if (logged()) renderShell(location.hash.replace('#','')); });
+if (logged()) renderShell(); else renderLogin();
+</script>
 </body>
 </html>
