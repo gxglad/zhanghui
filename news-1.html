@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>31张慧-日志详情</title>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">慧</span>
+      <span class="brand-text">
+        <b>张慧</b>
+        <i>CODE &amp; MOONLIGHT</i>
+      </span>
+    </a>
+    <nav class="nav" id="siteNav">
+      <a href="index.html" class="">首页</a>
+      <a href="news.html" class="active">日志</a>
+      <a href="about.html" class="">关于</a>
+      <a href="message.html" class="">留言板</a>
+      <a href="admin.html" class="nav-admin">后台</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="展开菜单">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+<main>
+  <article class="article">
+    <div class="article-head">
+      <span class="tag" style="display:inline-block;font-size:11px;letter-spacing:2px;padding:5px 12px;border-radius:999px;background:var(--green-soft);color:var(--green);">代码</span>
+      <h1 class="article-title">网站总算跑起来了</h1>
+      <div class="article-meta">
+        <span>2026 年 11 月 02 日</span>
+        <span>0 次阅读</span>
+        <span>作者：张慧</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <p>下午四点二十，首页终于在浏览器里显示出来了。前面两个小时一直是白屏，我以为是页面写错了，把 index.php 从头到尾看了一遍，没看出问题。后来想起来要看错误提示，翻到 environ.php 才发现库名少写了一个字母。</p>
+        <p>改完刷新，页面出来了。我在宿舍小声喊了一句，室友问我在干嘛。</p>
+        <p>这个网站做了一个多星期。前台是首页、日志、关于、留言板，后台能发文章、能删留言、能回复。数据库三张表，admin 存账号，news 存文章，message 存留言，表名按老师的要求改成了 zhanghui_ 开头。一开始漏改了一个文件里的 SQL，点了半天没反应，又找了很久。</p>
+        <p>写的过程里最麻烦的不是 HTML，是让表单和数据库对上。字段名多打一个字母就报错，报错只有一行英文，看不懂。我记了两页纸，现在回头看，大多数错误都犯得很低级。</p>
+        <p>后台在 admin/login.php，账号 admin，密码先设的 admin888。老师说要改成自己的密码，我记在便签上了，等交完作业再改。</p>
+        <p>还没弄好的：手机上表格会挤，图片一直没加。</p>
+        <p>2026-11-02 记。</p>
+    </div>
+
+    <div class="article-foot">
+      <div>
+        上一篇：已经是最早的一篇
+      </div>
+      <div>
+        下一篇：<a href="news-2.html">中午的食堂</a>
+      </div>
+    </div>
+  </article>
+</main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-name">张慧 · 代码与月光</div>
+        <p class="footer-desc">计算机223 31 号 · 动态网站设计实训作品</p>
+        <p class="footer-desc">记录上课、食堂和学校里的小事。</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">首页</a>
+        <a href="news.html">日志</a>
+        <a href="about.html">关于</a>
+        <a href="message.html">留言板</a>
+        <a href="admin.html">后台管理</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 张慧 个人网站</span>
+      <span class="credit">技术支持：计算机223-31-张慧</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

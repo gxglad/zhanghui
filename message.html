@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>31张慧-留言板</title>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">慧</span>
+      <span class="brand-text">
+        <b>张慧</b>
+        <i>CODE &amp; MOONLIGHT</i>
+      </span>
+    </a>
+    <nav class="nav" id="siteNav">
+      <a href="index.html" class="">首页</a>
+      <a href="news.html" class="">日志</a>
+      <a href="about.html" class="">关于</a>
+      <a href="message.html" class="active">留言板</a>
+      <a href="admin.html" class="nav-admin">后台</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="展开菜单">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+<main>
+  <section class="page-head">
+    <div class="container">
+      <h1 class="page-title">留言板</h1>
+      <p class="page-sub">想说什么就写一句，我都会看。</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 30px;">
+    <div class="container">
+      <div class="message-wrap">
+        <div class="form-card">
+          <h2>写一条留言</h2>
+          <p class="form-tip">昵称必填，邮箱选填，内容 2—300 字。</p>
+
+          <form method="post" action="#">
+            <div class="field">
+              <label for="name">昵称</label>
+              <input type="text" id="name" name="name" maxlength="20" placeholder="怎么称呼你？" value="">
+            </div>
+            <div class="field">
+              <label for="email">邮箱（选填）</label>
+              <input type="text" id="email" name="email" maxlength="60" placeholder="name@example.com" value="">
+            </div>
+            <div class="field">
+              <label for="content">留言内容</label>
+              <textarea id="content" name="content" maxlength="300" placeholder="写点什么吧……"></textarea>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">提交留言</button>
+              <span style="font-size:12px;color:var(--muted);letter-spacing:1px;">留言会显示在本页右侧</span>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <div class="section-head" style="margin-bottom:20px;">
+            <div>
+              <p class="section-kicker">Messages</p>
+              <h2 class="section-title" style="font-size:22px;">大家的留言</h2>
+            </div>
+            <span style="font-size:12.5px;color:var(--muted);letter-spacing:1.4px;">共 3 条</span>
+          </div>
+
+          <div class="msg-list">
+            <div class="msg-card">
+              <div class="msg-card-head">
+                <b>王老师</b>
+                <span>2026.11.02 09:12</span>
+              </div>
+              <p>首页的标题改成「31张慧-首页」了，其他页面也要一起改。数据库导出的 sql 记得放根目录。</p>
+              <div class="msg-reply"><b>张慧 回复：</b>改好了老师，正在重新传。</div>
+            </div>
+            <div class="msg-card">
+              <div class="msg-card-head">
+                <b>陈雨</b>
+                <span>2026.11.01 20:41</span>
+              </div>
+              <p>手机上打开导航会变成两条杠，能用。就是留言的输入框在小屏上有点靠下，要滑一下。</p>
+              
+            </div>
+            <div class="msg-card">
+              <div class="msg-card-head">
+                <b>匿名</b>
+                <span>2026.10.30 22:05</span>
+              </div>
+              <p>路过，收藏了。</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-name">张慧 · 代码与月光</div>
+        <p class="footer-desc">计算机223 31 号 · 动态网站设计实训作品</p>
+        <p class="footer-desc">记录上课、食堂和学校里的小事。</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">首页</a>
+        <a href="news.html">日志</a>
+        <a href="about.html">关于</a>
+        <a href="message.html">留言板</a>
+        <a href="admin.html">后台管理</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 张慧 个人网站</span>
+      <span class="credit">技术支持：计算机223-31-张慧</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>31张慧-日志详情</title>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">慧</span>
+      <span class="brand-text">
+        <b>张慧</b>
+        <i>CODE &amp; MOONLIGHT</i>
+      </span>
+    </a>
+    <nav class="nav" id="siteNav">
+      <a href="index.html" class="">首页</a>
+      <a href="news.html" class="active">日志</a>
+      <a href="about.html" class="">关于</a>
+      <a href="message.html" class="">留言板</a>
+      <a href="admin.html" class="nav-admin">后台</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="展开菜单">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+<main>
+  <article class="article">
+    <div class="article-head">
+      <span class="tag" style="display:inline-block;font-size:11px;letter-spacing:2px;padding:5px 12px;border-radius:999px;background:var(--green-soft);color:var(--green);">代码</span>
+      <h1 class="article-title">传文件传到 404</h1>
+      <div class="article-meta">
+        <span>2026 年 10 月 26 日</span>
+        <span>0 次阅读</span>
+        <span>作者：张慧</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <p>老师说网站要传到网页空间上，别人才能打开。我装了 FileZilla，填好主机、账号、密码，连上去看到一堆文件夹。</p>
+        <p>第一次传的时候网断了，重新连上以后，我把整个项目直接拖到了刚登录进来的那个目录，不是 wwwroot。传完打开网址，404。</p>
+        <p>我以为是空间还没生效，等了二十分钟，又刷新了十几次，还是 404。后来问了同学，他说网站必须放在 wwwroot 里面，放别的地方访问不到。</p>
+        <p>删掉重传，这次一口气传完。再打开网址，页面跟本地一模一样，连留言板里我测试时写的那条「111」都在。</p>
+        <p>有点不真实。原来我电脑上的东西，别人也能看到了。</p>
+    </div>
+
+    <div class="article-foot">
+      <div>
+        上一篇：<a href="news-3.html">学校的小猫</a>
+      </div>
+      <div>
+        下一篇：已经是最新的一篇
+      </div>
+    </div>
+  </article>
+</main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-name">张慧 · 代码与月光</div>
+        <p class="footer-desc">计算机223 31 号 · 动态网站设计实训作品</p>
+        <p class="footer-desc">记录上课、食堂和学校里的小事。</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">首页</a>
+        <a href="news.html">日志</a>
+        <a href="about.html">关于</a>
+        <a href="message.html">留言板</a>
+        <a href="admin.html">后台管理</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 张慧 个人网站</span>
+      <span class="credit">技术支持：计算机223-31-张慧</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
